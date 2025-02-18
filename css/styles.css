@@ -255,14 +255,21 @@ button {
 }
 
 .mobile-menu-close {
-  display: block;
-  margin-left: auto;
-  margin-bottom: 24px;
-
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
-  fill: #2e2f42;
+  padding: 0;
+  cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 100%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-nav-item:not(:last-child) {
@@ -303,7 +310,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 8px 0;
 }
 
 .mob-menu-thumb {
@@ -487,18 +493,6 @@ button:focus {
   color: #434455;
 }
 
-@media screen and (min-width: 1158px) {
-  .section-two {
-    padding: 120px 0;
-  }
-
-  .features-list-item {
-    width: calc((100% - 72px) / 4);
-    margin: 0;
-    gap: 24px;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .features-list {
     flex-direction: column;
@@ -515,14 +509,26 @@ button:focus {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1158px) {
+@media (min-width: 768px) and (max-width: 1157px) {
   .features-list {
     flex-wrap: wrap;
+    row-gap: 72px;
   }
 
   .features-list-item {
     width: calc((100% - 24px) / 2);
-    padding-bottom: 72px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .section-two {
+    padding: 120px 0;
+  }
+
+  .features-list-item {
+    width: calc((100% - 72px) / 4);
+    margin: 0;
+    gap: 24px;
   }
 }
 
@@ -559,7 +565,7 @@ button:focus {
   text-align: center;
   color: #2e2f42;
   text-transform: capitalize;
-  padding-bottom: 72px;
+  margin-bottom: 72px;
 }
 
 .team-list {
@@ -902,7 +908,6 @@ button:focus {
 
 @media screen and (min-width: 768px) {
   .footer-content {
-    margin-right: 24px;
     text-align: start;
   }
 
@@ -927,20 +932,19 @@ button:focus {
   .footer-container {
     padding-left: 108px;
     justify-content: start;
+    gap: 24px;
+    row-gap: 72px;
   }
 
   .footer-text {
     max-width: 264px;
-    margin-bottom: 72px;
   }
 }
 
 @media screen and (min-width: 1158px) {
-  .footer-container {
+  .page-footer .container {
+    display: flex;
     align-items: baseline;
-
-    justify-content: center;
-    row-gap: 72px;
   }
 
   .footer-content {
@@ -948,7 +952,6 @@ button:focus {
   }
 
   .social-container {
-    justify-content: flex-start;
     margin-right: 80px;
   }
 
